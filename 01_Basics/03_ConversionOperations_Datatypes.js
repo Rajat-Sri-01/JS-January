@@ -36,7 +36,7 @@ console.log(valueisBoolean3);
 let value = 3
 let negValue = -value
 // console.log(negValue);
-
+333
 // console.log(2+2);
 // console.log(2-2);
 // console.log(2*2);

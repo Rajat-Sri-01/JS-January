@@ -11,18 +11,18 @@ console.log(typeof (score));
 
 let somestring = "rajat"
 let valueisString = Boolean(somestring)
-// console.log(typeof valueisString);
-// console.log(valueisString);
+console.log(typeof valueisString);
+console.log(valueisString);
 
 let someboolean = 1
 let valueisBoolean = String(someboolean)
-// console.log(typeof valueisBoolean);
-// console.log(valueisBoolean);
+console.log(typeof valueisBoolean);
+console.log(valueisBoolean);
 
 let someboolean2 = undefined
 let valueisBoolean2 = Number(someboolean2)
-// console.log(typeof valueisBoolean2);
-// console.log(valueisBoolean2);
+console.log(typeof valueisBoolean2);
+console.log(valueisBoolean2);
 
 let someboolean3 = null
 let valueisBoolean3 = String(someboolean3)
@@ -66,7 +66,7 @@ num1 = num2 = num3 = 2 + 2
 
 let gameCounter = 100
 ++gameCounter;
-console.log(gameCounter);
+// console.log(gameCounter);
 
 // link to study
 // https://tc39.es/ecma262/multipage/abstract-operations.html#sec-type-conversion

@@ -6,7 +6,7 @@ const state = {
 }
 const {cityname3: MyCity} = state
 console.log(MyCity);
-// here cityname3: MyCity} = state, cityname3 is deconstruct as a MyCity, so for further calling we can use MyCity as a reference of cityname3 in state object.
+// here cityname3: MyCity} = state, cityname3 is deStructure as a MyCity, so for further calling we can use MyCity as a reference of cityname3 in state object.
 
 const {cityname: HomeCity} = state
 console.log(HomeCity);

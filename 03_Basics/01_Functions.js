@@ -40,12 +40,12 @@ function loginUser(username){
 
 function loginUser(username){
     if(username ===  undefined){ // here if() checks the undefined value is true or not.
-        console.log("Please login again");
+        // console.log("Please login again");
         return
     }
     return `${username} is logged in`
 }
-console.log(loginUser())
+// console.log(loginUser())
 
 // return;
 // return expression;

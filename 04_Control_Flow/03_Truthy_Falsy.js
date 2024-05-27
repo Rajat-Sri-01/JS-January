@@ -69,11 +69,18 @@ console.log(defaultname); // Output : 0
 
 
 //*********************************** Terniary Operator ? ***********************************************
+// The ternary operator in JavaScript, also known as the conditional operator, is a concise way to perform conditional evaluations. It operates on three operands and follows this syntax:
 
-// condition ? true : false
+// condition ? expressionIfTrue : expressionIfFalse;
+
+// condition: This is the expression that is evaluated. If the condition is true, the expressionIfTrue is executed; otherwise, the expressionIfFalse is executed.
+
+// // condition ? true : false
 
 let age = 10
 age >= 5 ? console.log("right") : console.log("wrong"); // op: right
 
 const vowels = [1,2,3,4,5,6]
 vowels != [1,2] ? console.log("right") : console.log("wrong"); // op: right
+
+// The ternary operator is a powerful tool for making quick, inline conditional decisions in your code. It's most useful for simple conditions and can help make your code more concise and readable when used appropriately. However, for more complex logic, traditional if-else statements are often clearer and easier to maintain.

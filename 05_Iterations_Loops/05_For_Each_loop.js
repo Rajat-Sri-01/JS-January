@@ -44,3 +44,25 @@ UserDetails.forEach( (value) => {
     console.log(value.id);
 })
 
+
+
+
+
+// for...of:
+
+// Best for: Iterating over values of iterable objects (arrays, strings, maps, sets, etc.).
+// Pros: Access to values directly, can use break and continue.
+// Cons: Not suitable for plain objects.
+
+// for...in:
+
+// Best for: Iterating over the properties of an object.
+// Pros: Access to keys, works with any object.
+// Cons: Iterates over all enumerable properties, including inherited ones; not recommended for arrays.
+
+// forEach:
+
+// Best for: Iterating over array elements to perform operations.
+// Pros: Simple and concise, access to element, index, and array.
+// Cons: Cannot exit early, does not return a new array.
+

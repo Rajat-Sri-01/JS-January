@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chair aur code</title>
+</head>
+<body style="background-color: black; color: aliceblue;">
+   <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+        <div class="day">Friday</div>
+   </div> 
+</body>
+<script>
+    const parent = document.querySelector('.parent')
+    // console.log(parent);
+    // console.log(parent.children); // it gives you HTML Collectin values whre HTML coll has array like properties
+    // HTMLCollection(5) [div.day, div.day, div.day, div.day, div.day]
+
+    // console.log(parent.children[2].innerHTML);
+    //Wednesday
+
+    for (let i = 0; i < parent.children.length; i++) {
+        // console.log(parent.children[i].innerHTML);
+    }
+
+    // parent.children[2].style.color = "red"
+    // parent.children[2].style.padding = "50px"
+
+    const datclass = document.querySelector('.day') // here .day is a child which gives result Monday and to access monday parent we need to add .parentElements
+    // console.log(datclass);
+    // console.log(datclass.parentNode); // will give child parents
+    // console.log(datclass.parentElement);
+    console.log(datclass.nextSibling);
+    console.log(datclass.previousSibling);
+    console.log(datclass.nextElementSibling);
+    console.log(datclass.previousElementSibling);
+
+    console.log("NODES:", parent.childNodes);
+//     NodeList(11) [text, div.day, text, div.day, text, div.day, text, div.day, text, div.day, text]
+// 0
+// : 
+// text
+// 1
+// : 
+// div.day
+// 2
+// : 
+// text
+// 3
+// : 
+// div.day
+// 4
+// : 
+// text
+// 5
+// : 
+// div.day
+// 6
+// : 
+// text
+// 7
+// : 
+// div.day
+// 8
+// : 
+// text
+// 9
+// : 
+// div.day
+// 10
+// : 
+// text
+// length
+// : 
+// 11
+
+
+
+</script>
+</html>

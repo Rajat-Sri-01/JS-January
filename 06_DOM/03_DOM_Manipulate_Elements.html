@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai Aur Code</title>
+</head>
+<body style="background-color: black; color: aliceblue;">
+    
+</body>
+
+<script>
+    const div = document.createElement('div')
+    console.log(div);
+    div.className = "main" // classname also overrides the values, best thing to use it to createTextNode property where code will optimize better.
+    // div.innerHTML = "Hi my name is Sri"
+    // here innerHtml is override the values so its not commonly used in while manipulating the elements
+    div.setAttribute("title", "xyz")
+    // this is the way to add title or any text things in the <div> tag by ysung setAttribute
+
+    const textnode = document.createTextNode("Hi My name is Rajat")
+    div.appendChild(textnode) // best way to optimize the code because its run on single thread not on multiple threads rounds
+    // here firstly we create variable textnode where createTextNode is used to add Text Value "Hi my name is Rajat" and after that add the TextNode to the div Element
+    // and using appendChild, we added the textnode itno the list where appendChild is used to
+    // method in JavaScript is used to add a new node to the end of the list of children of a specified parent node. This method is a part of the DOM (Document Object Model) API and is commonly used to dynamically add elements to a web page.
+
+    document.body.appendChild(div)
+    // here doucement has the body and appendchild added the (div) into the body to display in the Web page live server.
+</script>
+</html>

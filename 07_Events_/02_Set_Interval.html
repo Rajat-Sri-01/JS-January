@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Interval</title>
+</head>
+<body>
+    <h1>Chai Aur code</h1>
+    <button id="stop">Stop</button>
+</body>
+
+<script>  
+    
+    const changeh1 = function(){
+        document.querySelector('h1').innerHTML = "Hi Rajat this side!!!!!!!"
+        console.log(changeh1); // this function is used to change the innerhtml content of the h1
+    }
+
+    const changeMe = setInterval(changeh1,2000) // setInterval is used to start the program with the delay of any seconds, here 2000 is 2 Seconds so every 2 seconds of interval it will continue the program like if we print 2 then after each evry 2 seconfs 2 will print again and again with the time interval od 2 seconds and the seconds is not fixed here it can be chnaged as per the requirements.
+    // console.log(changeMe);
+
+    document.querySelector('#stop').addEventListener('click', function(event){
+        clearInterval(changeMe)// here addeventlistner has the event click for stop button and clearinterval is used to clear the Interval or clean the interval that already running in the funtion of program. Where Stop button performs the event and by clicking it the interval will stop and clean.
+        console.log("Stopped");
+    })
+
+</script>
+</html>

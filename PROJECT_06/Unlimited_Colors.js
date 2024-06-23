@@ -11,7 +11,7 @@ let intervalId;
 
 
 const startChangeColor = function(){
-    if (!intervalId) {
+    if (!intervalId) { // Note that if (intervalId == null) is not exactly the same as if (!intervalId). The == null check only checks for null, whereas !intervalId checks for both null and undefined. In this specific case, both checks would work, but in general, !intervalId is a more robust way to check for null or undefined.
         intervalId = setInterval(changeColor, 1000)
     }
     function changeColor(){

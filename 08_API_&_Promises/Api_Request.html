@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photo and Name Card</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+  </head>
+  <body>
+    <div class="card">
+      <img id="photo" src=" " alt="Profile Photo" class="profile-photo" />
+      <h2 id="name" class="name"></h2>
+      <button id="profile">Profile Info</button>
+    </div>
+  </body>
+  <script>
+    document.querySelector("#profile").addEventListener("click", prButton);
+
+    function prButton() {
+      const xhr = new XMLHttpRequest();
+      xhr.open("GET", "https://api.github.com/users/hiteshchoudhary", true);
+      // console.log(xhr.readyState);
+      xhr.onreadystatechange = function () {
+        // console.log(xhr.readyState);
+        if (xhr.readyState === 4) {
+          const data = JSON.parse(this.responseText);
+          console.log(typeof data);
+          console.log(data);
+          console.log(data.avatar_url);
+
+          document.getElementById("photo").src = data.avatar_url;
+          document.getElementById("name").textContent = data.name;
+        }
+      };
+      xhr.send();
+    }
+  </script>
+  '
+</html>
+
+
+<!-- 
+1. document.querySelector("#profile").addEventListener("click", prButton);
+
+This line adds an event listener to an HTML element with the id "profile". When the element is clicked, the prButton function will be called.
+
+2. function prButton() { ... }
+
+This defines the prButton function, which will be called when the "profile" element is clicked.
+
+3. const xhr = new XMLHttpRequest();
+
+This line creates a new instance of the XMLHttpRequest object, which is used to make an asynchronous request to a server.
+
+4. xhr.open("GET", "https://api.github.com/users/hiteshchoudhary", true);
+
+This line opens a new request to the specified URL (https://api.github.com/users/hiteshchoudhary) using the GET method. The true parameter indicates that the request should be made asynchronously.
+
+5. xhr.onreadystatechange = function () { ... }
+
+This line sets up an event handler for the onreadystatechange event, which is triggered whenever the ready state of the request changes. The event handler is a function that will be called when the ready state changes.
+
+6. if (xhr.readyState === 4) { ... }
+
+This line checks the current ready state of the request. If the ready state is 4, it means the request has completed successfully. The code inside this block will only be executed when the request has completed.
+
+7. const data = JSON.parse(this.responseText);
+
+This line parses the response text from the server as JSON data and stores it in the data variable.
+
+8. console.log(typeof data);
+
+This line logs the type of the data variable to the console. Since data is a JSON object, this will log "object" to the console.
+
+9. console.log(data);
+
+This line logs the entire data object to the console.
+
+10. console.log(data.avatar_url);
+
+This line logs the value of the avatar_url property from the data object to the console.
+
+11. document.getElementById("photo").src = data.avatar_url;
+
+This line sets the src attribute of an HTML element with the id "photo" to the value of the avatar_url property from the data object. This will display the user's avatar image.
+
+12. document.getElementById("name").textContent = data.name;
+
+This line sets the text content of an HTML element with the id "name" to the value of the name property from the data object. This will display the user's name.
+
+13. xhr.send();
+
+This line sends the request to the server. Since this is a GET request, there is no data to send in the request body, so this line simply initiates the request. -->

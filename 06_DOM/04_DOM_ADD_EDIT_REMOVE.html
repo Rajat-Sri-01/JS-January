@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai Aur Code</title>
+</head>
+<body style="background-color: black; color: aliceblue;">
+    <ul class="ProgrammingLanguage">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    //  ADD 
+
+    // function to add multiple Programming Lng list in ul.
+     // first approach
+    function addProgLang(langName) {
+        const li = document.createElement('li') // first create a element and after that add a Text Value as in LangName
+        li.innerHTML = `${langName}` // using innerHTML it takes mpore time to traverse the node tree and this is not optimized approach.
+        document.querySelector('.ProgrammingLanguage').appendChild(li) // In Document QuerySelector selects the progLang class where appendChild used to add the Text Value which is langName in li of ul
+    }
+    addProgLang('Python')
+    addProgLang('GoLang')
+
+     // Second Approach (More OPTIMISED)
+    function addProgLang2(langName){
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))// here, createTextNode has LangName which is TypeScript and C+= and adding it itno li using appendChild property
+        // this is more optimised approach as tree traversal of the nodes its not taking much time and overriding of the text values is not happening.
+        document.querySelector('.ProgrammingLanguage').appendChild(li)// and same thing will work as above 
+        //  In Document QuerySelector selects the progLang class where appendChild used to add the Text Value which is langName in li of ul
+    }
+    addProgLang2('TypeScript')
+    addProgLang2('C++')
+
+
+    // EDIT
+
+    const editLang = document.querySelector('li:nth-child(3)')
+    // editLang.innerHTML = "Ruby"
+    // editLang.textContent = "Java" //here innerHTML/TextContent are same, same working
+    const newElement = document.createElement('li')// creating new element for li and where textContent value Java gonna be replace with (GoLang) value
+    newElement.textContent = "Java"
+    editLang.replaceWith(newElement) // replaceWith is used to replace the text nodes in the document of elements
+
+
+    const firstlang = document.querySelector('li:first-child')
+    firstlang.outerHTML = '<li>TypeScript</li>' // outerHTML used to :
+//     Replacement: When setting outerHTML, the entire element, including its children, is replaced in the DOM. Be careful when using it, as it will remove any event listeners attached to the original element.
+//     Usage Context: outerHTML is useful when you need to completely replace an element and its contents with new HTML markup, but it should be used judiciously to avoid unexpected side effects, such as losing event listeners or breaking references to the original element.
+//     Read and Write: outerHTML can be both read (to get the HTML of an element) and written (to set new HTML for an element).
+
+    // REMOVE
+
+    const lastlang = document.querySelector('li:last-child')
+    lastlang.remove("C++")// .rmove simply remove the text node
+
+</script>
+</html>

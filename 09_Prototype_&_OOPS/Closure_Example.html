@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Background Color</title>
+</head>
+<body>
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+
+    <script>
+         // document.getElementById("orange").onclick = function(){
+        //     document.body.style.backgroundColor = `orange`
+        // }
+        // document.getElementById("green").onclick = function(){
+        //     document.body.style.backgroundColor = `green`
+        // }
+
+
+        function clickHandler(color) {
+            return function() {
+                document.body.style.backgroundColor = `${color}`;
+            }
+        }
+
+        document.getElementById('orange').onclick = clickHandler("orange");
+        document.getElementById('green').onclick = clickHandler("green");
+
+        // How It Works
+
+// Calling clickHandler:
+// When clickHandler("orange") is called, it creates a closure where color is "orange". The function returned by clickHandler will set the background color to "orange".
+// Similarly, when clickHandler("green") is called, it creates a closure where color is "green". The function returned by clickHandler will set the background color to "green".
+
+// Assigning the Closure to onclick Events:
+// The returned functions (closures) from clickHandler("orange") and clickHandler("green") are assigned to the onclick events of the respective elements. These functions remember the color value that was passed to clickHandler.
+
+// Handling Click Events:
+// When the element with ID orange is clicked, the function assigned to its onclick event is executed. This function sets the background color to "orange".
+// When the element with ID green is clicked, the function assigned to its onclick event is executed. This function sets the background color to "green".
+
+    </script>
+</body>
+</html>

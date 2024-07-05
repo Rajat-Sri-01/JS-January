@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Button Clicked</button>
+</body>
+<script>
+     class React {
+        constructor(){
+            // Initialize properties
+            this.library = "React"
+            this.server = "https://localhost:300"
+
+            //requirement
+            // Attach an event listener to a button element
+            document
+                .querySelector('button')
+                .addEventListener('click', this.handleClick.bind(this))
+
+        }
+        handleClick(){
+            // Log messages to the console when the button is clicked
+            console.log("button clicked");
+            console.log(this.server);
+        }
+    }
+// Create an instance of the React class
+    const app = new React()
+</script>
+</html>
+
+
+
+
+<!-- 
+
+Detailed Breakdown
+
+Class Definition:
+A class named React is defined using the class keyword. This class has a constructor and a method called handleClick.
+
+Constructor (constructor method):
+The constructor method is called when a new instance of the class is created.
+
+Inside the constructor:
+this.library is set to the string "React".
+this.server is set to the string "https://localhost:300".
+An event listener is attached to a button element found in the document.
+
+Event Listener:
+document.querySelector('button') selects the first button element in the document.
+.addEventListener('click', this.handleClick.bind(this)) adds a click event listener to the selected button.
+this.handleClick refers to the handleClick method of the class.
+.bind(this) ensures that the this keyword inside handleClick refers to the instance of the React class, not the button element itself.
+
+handleClick Method:
+This method is called whenever the button is clicked.
+
+Inside this method:
+console.log("button clicked"); logs the message "button clicked" to the console.
+console.log(this.server); logs the value of this.server to the console. Since this is bound to the instance of the React class, this.server will output "https://localhost:300".
+
+Instance Creation:
+const app = new React(); creates a new instance of the React class.
+When the instance is created, the constructor is executed, setting up the properties and the event listener. -->
